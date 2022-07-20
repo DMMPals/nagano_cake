@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_062048) do
   end
 
   create_table "cart_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "item_id"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_062048) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "genre_id"
     t.string "name", null: false
     t.integer "price", null: false
     t.text "explain", null: false
@@ -59,11 +62,17 @@ ActiveRecord::Schema.define(version: 2022_07_19_062048) do
   end
 
   create_table "order_addresses", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "order_name", null: false
+    t.string "post", null: false
+    t.text "address", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "order_details", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "item_id"
     t.integer "sale_price", null: false
     t.integer "quantity", null: false
     t.string "item_status", null: false
@@ -72,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_062048) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.integer "customer_id"
     t.integer "payment", null: false
     t.integer "postage", null: false
     t.integer "payment_price", null: false
