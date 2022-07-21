@@ -1,4 +1,5 @@
 <h2>商品一覧</h2>
+<%= link_to "商品新規登録", new_admins_item_path %>
 
  <table>
     <thead>
@@ -13,5 +14,22 @@
         </tr>
     </thead>
     
-    
+    <tbody>
+        
+        <% @items.each do |items| %>
+            <tr>
+              
+                <th><%= item.id %></th>
+                <th><&= link_to item.name, admins_item_path(item) %></th>
+                <th><%= item.price %></th>
+                <th><%= item.genre.name %></th>
+                <th><% if item.is_active == true %>
+                     販売中
+                    <% else %>
+                     販売停止中
+                    <% end %>
+                </th>
+            </tr>
+        <% end %>
+    </tbody>
  </table>
