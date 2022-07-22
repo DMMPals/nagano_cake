@@ -1,0 +1,17 @@
+<h2><%= @customer.surname %><%= @customer.name %>さんの会員詳細</h2>
+<br>会員ID
+    <%= @customer.id %></br>
+  <br>氏名
+    <%= @customer.surname %><%= @customer.name %></br>
+  <br>フリガナ
+    <%= @customer.surname_kana %><%= @customer.name_kana %></br>
+  <br>郵便番号
+    <%= @customer.post %></br>
+  <br>住所
+    <%= @customer.address %></br>
+  <br>電話番号
+    <%= @customer.tel %></br>
+  <br>email
+    <%= @customer.email %></br>
+  <br>会員ステータス</br>
+  <%= link_to "編集する", edit_admin_customer_path %>

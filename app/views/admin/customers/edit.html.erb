@@ -1,0 +1,22 @@
+<h2><%= @customer.surname %><%= @customer.name %>さんの会員情報編集</h2>
+
+<%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
+  <br>会員ID
+    <%= @customer.id %></br>
+  <br>氏名
+    <%= f.text_field :surname %><%= f.text_field :name %></br>
+  <br>フリガナ
+    <%= f.text_field :surname_kana %><%= f.text_field :name_kana %></br>
+  <br>郵便番号
+    <%= f.text_field :post %></br>
+  <br>住所
+    <%= f.text_field :address %></br>
+  <br>電話番号
+    <%= f.text_field :tel %></br>
+  <br>email
+    <%= f.email_field :email %></br>
+  <br>会員ステータス</br>
+<br><%= f.submit '変更を保存' %></br>
+
+<% end %>
+
