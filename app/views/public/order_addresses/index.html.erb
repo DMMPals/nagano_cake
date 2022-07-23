@@ -1,0 +1,34 @@
+<h2>お客様の配送先一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>宛名</th>
+      <th>郵便番号</th>
+      <th>配送先住所</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.order_name %></td>
+        <td><%= address.post %></td>
+        <td><%= address.address %></td>
+        <td><%= link_to "編集", edit_public_order_address_path(address) %></td>
+        <td><%= link_to "削除", public_order_address_path(address), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>配送先新規作成</h2>
+<%= form_with url: public_order_addresses_path do |f| %>
+  <%= f.label "ご配送先の宛名" %><br>
+    <%= f.text_field :order_name %><br>
+
+  <%= f.label "郵便番号" %><br>
+    <%= f.text_field :post %><br>
+
+  <%= f.label "ご配送先の住所" %><br>
+    <%= f.text_area :address %><br>
+
+  <%= f.submit "新規作成" %>
+<% end %>

@@ -17,5 +17,4 @@ class Customer < ApplicationRecord
   validates :tel, presence: true
   validates :email, presence: true
 
-
 end
