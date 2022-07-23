@@ -1,0 +1,14 @@
+<h1>配送先の編集</h1>
+  <%= form_with model: @address, url: public_order_address_path do |f| %>
+    <%= f.label "ご配送先の宛名" %><br>
+      <%= f.text_field :order_name %><br>
+
+    <%= f.label "郵便番号" %><br>
+      <%= f.text_field :post %><br>
+
+    <%= f.label "ご配送先の住所" %><br>
+      <%= f.text_area :address %><br>
+
+    <%= f.submit "新規作成" %>
+  <% end %>
+<%= link_to 'Back', public_order_addresses_path %>
