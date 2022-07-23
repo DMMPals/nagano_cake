@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :genre
+  has_one_attached :image
   
-  validates :image_id, presence: true
   validates :name, presence: true
   validates :explain, presence: true
   validates :genre_id, presence: true
