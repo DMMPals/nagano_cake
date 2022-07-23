@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   validates :genre_id, presence: true
 #消費税を加えた商品価格のメソッド
     def add_tax_price
-        (self.price * 1.10).round
+        (self.price * 1.08).round
     end
     
 end
