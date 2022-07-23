@@ -1,0 +1,21 @@
+#支払方法（追記する場合、モデルやカラムのインデント注意）
+ja:
+  enums:
+    order:
+      payment:
+        credit_card: "クレジットカード"
+        transfer: "銀行振込"
+#注文ステータス
+      order_status:
+        no_payment: "入金待ち"
+        confirm_payment: "入金確認"
+        production: "製作中"
+        ready_to_ship: "発送準備中"
+        sent: "発送済み"
+#制作ステータス
+    order_detail:
+      item_status:
+        no_making: "製造不可"
+        wait_making: "製造待ち"
+        now_making: "製造中"
+        complete_making: "製造完了"
