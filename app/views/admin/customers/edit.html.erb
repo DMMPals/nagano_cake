@@ -1,8 +1,7 @@
 <h2><%= @customer.surname %><%= @customer.name %>さんの会員情報編集</h2>
 
 <%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
-  <br>会員ID
-    <%= @customer.id %></br>
+ 
   <br>氏名
     <%= f.text_field :surname %><%= f.text_field :name %></br>
   <br>フリガナ
