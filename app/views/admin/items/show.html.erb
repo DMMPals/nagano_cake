@@ -3,7 +3,12 @@
     <h2>商品詳細</h2>
     
     <div>
-        <%= image_tag 'no_image.jpeg', size: "300x250" %>
+        <% if @item.image.attached? %>
+        <%= image_tag @item.image %>
+        <% else %>
+        <%= image_tag 'no_image.jpeg' %>
+        <% end %>
+
     </div>
     
     <table class="table">
