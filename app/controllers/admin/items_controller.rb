@@ -29,7 +29,7 @@ class Admin::ItemsController < ApplicationController
 
   def update
     if @item = Item.find(params[:id])
-       @item.update(genre_params)
+       @item.update(item_params)
        redirect_to admin_items_path
     else
        render :edit
