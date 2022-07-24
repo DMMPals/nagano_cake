@@ -1,9 +1,15 @@
-<h2>会員一覧</h2>
+<table>
+    <tbody>
 
-<% @customers.each do |customer| %>
-    <%= customer.id %>
-    <%= link_to admin_customer_path(customer) do %>
-        <%= customer.surname %>  <%= customer.name %>
-    <% end %>
-    <%= customer.email %>
-<% end %>
+        <h2>会員一覧</h2>
+
+       <% @customers.each do |customer| %>
+         <%= customer.id %>
+         <%= link_to admin_customer_path(customer) do %>
+           <%= customer.surname %>  <%= customer.name %>
+         <% end %>
+         <%= customer.email %>
+       <% end %>
+
+    </tbody>
+</table>

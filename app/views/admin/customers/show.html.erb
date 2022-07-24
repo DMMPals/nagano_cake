@@ -1,4 +1,6 @@
-<h2><%= @customer.surname %><%= @customer.name %>さんの会員詳細</h2>
+<table>
+    <tbody>
+<h2><%= @customer.surname %><%= @customer.name %>様の会員詳細</h2>
 <br>会員ID
     <%= @customer.id %></br>
   <br>氏名
@@ -15,3 +17,5 @@
     <%= @customer.email %></br>
   <br>会員ステータス</br>
   <%= link_to "編集する", edit_admin_customer_path %>
+    </table>
+</tbody>
