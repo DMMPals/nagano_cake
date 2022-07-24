@@ -16,6 +16,6 @@ ja:
     order_detail:
       item_status:
         no_making: "製造不可"
-        wait_making: "製造待ち"
-        now_making: "製造中"
-        complete_making: "製造完了"
+        waiting: "製造待ち"
+        making: "製造中"
+        complete: "製造完了"
