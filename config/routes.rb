@@ -21,7 +21,7 @@ namespace :public do
   patch "customers" => "customers#withdraw", as: "withdraw"
 
   resources :order_addresses, only: [:create, :index, :edit, :update, :destroy]
-
+  resources :items, only: [:index, :show]
 end
 
 namespace :admin do

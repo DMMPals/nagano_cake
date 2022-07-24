@@ -1,0 +1,25 @@
+<h2>商品一覧</h2>
+
+<% @items.each do |product| %>
+            
+    <table class="table">
+        <tr>
+           
+            <th><%= link_to item_path(item) do %>
+            <%= attachment_image_tag(product, :image,size: "180x130", fallback: "no_image.jpg") %>
+            <% end %>
+            </th>
+                   
+         </tr>
+         <tr>
+            <th><%= link_to product.name, product_path(product) %></th>
+        
+         </tr>
+         <tr>
+            
+            <th>￥<%= (product.price * 1.1).to_i %></th>
+        
+        </tr>
+    </table>
+        
+ <% end %>
