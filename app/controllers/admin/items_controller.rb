@@ -28,8 +28,8 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
-    if @item = Item.find(params[:id])
-       @item.update(item_params)
+       @item = Item.find(params[:id])
+    if @item.update(item_params)
        redirect_to admin_items_path
     else
        render :edit
