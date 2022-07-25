@@ -3,33 +3,37 @@
     <table>
       <tbody>
         <tr>
-          <th>氏名</th>
-          <th><%= f.text_field :surname %><%= f.text_field :name %></th>
+          <td>氏名</td>
+          <td><%= f.text_field :surname %><%= f.text_field :name %></td>
         </tr>
         <tr>
-          <th>フリガナ</th>
-          <th><%= f.text_field :surname_kana %><%= f.text_field :name_kana %></th>
+          <td>フリガナ</td>
+          <td><%= f.text_field :surname_kana %><%= f.text_field :name_kana %></td>
         </tr>
         <tr>
-          <th>郵便番号</th>
-          <th><%= f.text_field :post %></th>
+          <td>郵便番号</td>
+          <td><%= f.text_field :post %></td>
         </tr>
         <tr>
-          <th>住所</th>
-          <th><%= f.text_field :address %></th>
+          <td>住所</td>
+          <td><%= f.text_field :address %></td>
         </tr>
-          <th>電話番号</th>
-          <th><%= f.text_field :tel %></th>
-        </tr>
-        <tr>
-          <th>email</th>
-          <th><%= f.email_field :email %></th>
+          <td>電話番号</td>
+          <td><%= f.text_field :tel %></td>
         </tr>
         <tr>
-          <th>会員ステータス</th>
+          <td>email</td>
+          <td><%= f.email_field :email %></td>
         </tr>
         <tr>
-          <th><%= f.submit '変更を保存' %></th>
+          <td>会員ステータス</td>
+          <td>
+            <%= f.radio_button(:is_enable, true) %>有効
+            <%= f.radio_button(:is_enable, false) %>退会
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.submit '変更を保存' %></td>
         </tr>
       </tbody>
     </table>
