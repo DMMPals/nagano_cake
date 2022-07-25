@@ -1,21 +1,37 @@
 <h2><%= @customer.surname %><%= @customer.name %>様の会員情報編集</h2>
-
-<%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
-
-  <br>氏名
-    <%= f.text_field :surname %><%= f.text_field :name %></br>
-  <br>フリガナ
-    <%= f.text_field :surname_kana %><%= f.text_field :name_kana %></br>
-  <br>郵便番号
-    <%= f.text_field :post %></br>
-  <br>住所
-    <%= f.text_field :address %></br>
-  <br>電話番号
-    <%= f.text_field :tel %></br>
-  <br>email
-    <%= f.email_field :email %></br>
-  <br>会員ステータス</br>
-<br><%= f.submit '変更を保存' %></br>
-
-<% end %>
+  <%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
+    <table>
+      <tbody>
+        <tr>
+          <th>氏名</th>
+          <th><%= f.text_field :surname %><%= f.text_field :name %></th>
+        </tr>
+        <tr>
+          <th>フリガナ</th>
+          <th><%= f.text_field :surname_kana %><%= f.text_field :name_kana %></th>
+        </tr>
+        <tr>
+          <th>郵便番号</th>
+          <th><%= f.text_field :post %></th>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <th><%= f.text_field :address %></th>
+        </tr>
+          <th>電話番号</th>
+          <th><%= f.text_field :tel %></th>
+        </tr>
+        <tr>
+          <th>email</th>
+          <th><%= f.email_field :email %></th>
+        </tr>
+        <tr>
+          <th>会員ステータス</th>
+        </tr>
+        <tr>
+          <th><%= f.submit '変更を保存' %></th>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
 
