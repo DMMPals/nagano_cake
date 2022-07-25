@@ -1,0 +1,30 @@
+<h2>商品一覧</h2>
+
+<% @items.each do |item| %>
+            
+    <table class="table">
+        <tr>
+           
+            <th><%= link_to public_item_path(item) do %>
+            <% if item.image.attached? %>
+            <%= image_tag item.image %>
+            <% else %>
+            <%= image_tag 'no_image.jpeg'%>
+            <% end %>
+    <% end %>
+            
+           </th>
+                   
+         </tr>
+         <tr>
+            <th><%= link_to item.name, public_item_path(item) %></th>
+        
+         </tr>
+         <tr>
+            
+            <th>￥<%= (item.price * 1.08).to_i %></th>
+        
+        </tr>
+    </table>
+        
+ <% end %>
