@@ -22,6 +22,10 @@ namespace :public do
 
   resources :order_addresses, only: [:create, :index, :edit, :update, :destroy]
   resources :items, only: [:index, :show]
+
+  patch "orders/check" => "orders#check", as: "check"
+  get   "orders/done"  => "orders#done",  as: "done"
+  resources :orders, only: [:new, :index, :show, :create]
 end
 
 namespace :admin do
