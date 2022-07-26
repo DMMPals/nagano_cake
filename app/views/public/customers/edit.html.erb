@@ -1,0 +1,37 @@
+<h2>会員情報編集</h2>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@user.errors.count, "error") %>　件のエラーが発生しました。</h3>
+      <ul>
+        <% @users.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form_with model: @user, url: public_information_path do |f| %>
+        <%= f.label "姓　" %>
+        <%= f.text_field :surname %>
+
+        <%= f.label "名　" %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label "セイ" %>
+        <%= f.text_field :surname_kana %>
+
+        <%= f.label "メイ" %>
+        <%= f.text_field :name_kana %><br>
+
+        <%= f.label "郵便番号" %>
+        <%= f.text_field :post %><br>
+
+        <%= f.label "住所" %>
+        <%= f.text_area :address %><br>
+
+        <%= f.label "電話番号" %>
+        <%= f.text_field :tel %><br>
+
+        <%= f.submit "更新" %>
+      </div>
+    <% end %>
+  <%= link_to "会員情報の削除", public_unsubscribe_path %>
