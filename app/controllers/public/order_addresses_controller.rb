@@ -1,5 +1,5 @@
 class Public::OrderAddressesController < ApplicationController
-
+  before_action :authenticate_customer!
   def index
     @addresses = current_customer.order_address.all
     @address = OrderAddress.new
@@ -17,7 +17,9 @@ class Public::OrderAddressesController < ApplicationController
     @address = OrderAddress.new(order_address_params)
     @address.customer_id = current_customer.id
     if @address.save
-      redirect_to request.referer, notice: '配送先の登録が完了しました。'
+      flash.now[:notice] = '配送先の登録が完了しました。'
+      @addresses = current_customer.order_address.all
+      render :index
     else
       @addresses = current_customer.order_address.all
       render :index
@@ -28,7 +30,8 @@ class Public::OrderAddressesController < ApplicationController
     @address = OrderAddress.find(params[:id])
     if @address.update(order_address_params)
       @addresses = current_customer.order_address.all
-      render :index, notice: '配送先の更新が完了しました。'
+      flash.now[:notice] = '配送先の更新が完了しました。'
+      render :index
     else
       render :edit
     end
@@ -38,7 +41,8 @@ class Public::OrderAddressesController < ApplicationController
     @address = OrderAddress.find(params[:id])
     @address.destroy
     @addresses = current_customer.order_address.all
-    render :index, notice: '配送先の削除が完了しました。'
+    flash.now[:notice] = '配送先の削除が完了しました。'
+    render :index
   end
 
   private
