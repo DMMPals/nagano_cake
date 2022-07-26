@@ -26,12 +26,6 @@ namespace :public do
   resources :items, only: [:index, :show]
   delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
   resources :cart_items, only: [:create, :index, :update, :destroy]
-  
-
-
-  patch "orders/check" => "orders#check", as: "check"
-  get   "orders/done"  => "orders#done",  as: "done"
-  resources :orders, only: [:new, :index, :show, :create]
 
 end
 
