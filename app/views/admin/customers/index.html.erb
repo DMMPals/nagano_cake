@@ -1,0 +1,29 @@
+<h2>会員一覧</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.id %></td>
+            <td><%= link_to admin_customer_path(customer) do %></td>
+            <td><%= customer.surname %>  <%= customer.name %></td>
+            <td><%= customer.email %></td>
+            <td>
+              <% if customer.is_enable == true %>
+                <div>有効</div>
+              <% else %>
+                <div>退会</div>
+              <% end %>
+            </td>
+            <% end %>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
