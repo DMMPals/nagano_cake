@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :genre
+  has_many :care_items, dependent: :destroy
+  has_many :customers, through: :cart_items
   has_one_attached :image
   
   validates :name, presence: true

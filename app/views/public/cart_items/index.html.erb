@@ -1,0 +1,48 @@
+<h2>ショッピングカート</h2>
+<div>
+    <%= link_to 'カートを空にする', public_cart_items_destroy_all_path, method: :delete, class: 'btn btn-default' %>
+</div>
+ 
+ <table>
+    <thead>
+        <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+        <% @cart_items.each do |cart_item| %>
+			<tr>
+				<td><%= cart_item.item.name %></td>
+				<td><%= (cart_item.item.price * 1.08).to_i %></td>
+				<td>
+					<%= form_with model: cart_item, url: public_cart_item_path(id: cart_item.id), local: true do |f| %>
+					<%= f.number_field :quantity, min: 1, max: 100 %>
+					<%= f.submit "変更" %>
+					<% end %>
+				</td>
+				<td><%= (cart_item.item.price * 1.08).to_i * cart_item.quantity  %></td>
+				<td><%= link_to "削除する", public_cart_item_path(id: cart_item.id), method: :delete, class: 'btn btn-default' %></td>
+				</tr>
+		<% end %>
+    </tbody>
+ </table>
+ 
+ <table>
+	<tr>
+		<th>合計金額</th>
+		<td><%= @sum %></td>
+	</tr>
+</table>
+
+</div>
+	<%= link_to "買い物を続ける", public_items_path, class: 'btn btn-default' %>
+<div>
+    
+
+    
+    
