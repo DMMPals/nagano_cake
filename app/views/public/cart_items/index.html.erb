@@ -1,6 +1,6 @@
 <h2>ショッピングカート</h2>
 <div>
-    <%= link_to 'カートを空にする', @cart_item, method: :delete, class: 'btn btn-default' %>
+    <%= link_to 'カートを空にする', public_cart_items_destroy_all_path, method: :delete, class: 'btn btn-default' %>
 </div>
  
  <table>

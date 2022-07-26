@@ -22,7 +22,9 @@ namespace :public do
 
   resources :order_addresses, only: [:create, :index, :edit, :update, :destroy]
   resources :items, only: [:index, :show]
+  delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
   resources :cart_items, only: [:create, :index, :update, :destroy]
+  
 end
 
 namespace :admin do

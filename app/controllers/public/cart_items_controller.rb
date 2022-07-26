@@ -16,7 +16,7 @@ class Public::CartItemsController < ApplicationController
     @cart_item.quantity = params[:cart_item][:item_id]
     @cart_item.update(cart_item_params)
   
-    render "index"
+    redirect_to public_cart_items_path
   end
 
   def destroy
