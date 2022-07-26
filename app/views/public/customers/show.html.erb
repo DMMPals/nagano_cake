@@ -1,0 +1,5 @@
+<h4><%= @user.surname %>様 いつもご利用頂きありがとうございます。</h4>
+<%= link_to "会員情報の編集", public_information_edit_path %>
+<%= link_to "ご登録の配送先", public_order_addresses_path(@user) %>
+<%= link_to "ホーム", public_root_path %>
+<%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
