@@ -19,13 +19,14 @@ namespace :public do
   patch "customers/information" => "customers#update", as: "information"
   get "customers/unsubscribe" => "customers#unsubscribe", as: "unsubscribe"
   patch "customers" => "customers#withdraw", as: "withdraw"
-
-  resources :order_addresses, only: [:create, :index, :edit, :update, :destroy]
-  resources :items, only: [:index, :show]
-
   patch "orders/check" => "orders#check", as: "check"
   get   "orders/done"  => "orders#done",  as: "done"
   resources :orders, only: [:new, :index, :show, :create]
+  resources :order_addresses, only: [:create, :index, :edit, :update, :destroy]
+  resources :items, only: [:index, :show]
+  delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
+  resources :cart_items, only: [:create, :index, :update, :destroy]
+
 end
 
 namespace :admin do
