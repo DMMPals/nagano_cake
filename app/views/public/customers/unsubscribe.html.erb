@@ -1,6 +1,14 @@
-<h2>退会確認</h2>
-<p>過去のご注文の内容、お客様のご登録情報が全て削除されます。<br>
-ご注文が完了していない方は、ご注文の完了後に再度お手続きをお願いいたします。</p>
-<h3>本当に退会なさいますか?</h3>
-<%= link_to "はい", public_withdraw_path, method: :patch %><br>
-<%= link_to "いいえ", public_my_page_path %>
+<div class="container">
+  <div class="row">
+    <div class='mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
+      <h2 class="mx-auto mt-3 text-center">退会確認</h2>
+      <p class="mx-auto col-8 text-center">過去のご注文の内容、お客様のご登録情報が全て削除されます。<br>
+      ご注文が完了していない方は、ご注文の完了後に再度お手続きをお願いいたします。</p>
+      <h3 class="mx-auto mt-3 text-center">本当に退会なさいますか?</h3>
+      <div class="d-flex justify-content-center">
+        <%= link_to "はい", public_withdraw_path, method: :patch , class: "btn btn-danger btn-sm mx-2" %>
+        <%= link_to "いいえ", public_my_page_path , class: "btn btn-outline-secondary btn-sm mx-2" %>
+      </div>
+    </div>
+  </div>
+</div>
