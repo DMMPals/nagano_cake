@@ -7,9 +7,9 @@ ja:
         transfer: "銀行振込"
 #注文ステータス
       order_status:
-        no_payment: "入金待ち"
+        waiting_pay: "入金待ち"
         confirm_payment: "入金確認"
-        production: "製作中"
+        working: "製作中"
         ready_to_ship: "発送準備中"
         sent: "発送済み"
 #制作ステータス
