@@ -1,41 +1,47 @@
-<h2><%= @customer.surname %><%= @customer.name %>様の会員情報編集</h2>
-  <%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
-    <table>
-      <tbody>
-        <tr>
-          <td>氏名</td>
-          <td><%= f.text_field :surname %><%= f.text_field :name %></td>
-        </tr>
-        <tr>
-          <td>フリガナ</td>
-          <td><%= f.text_field :surname_kana %><%= f.text_field :name_kana %></td>
-        </tr>
-        <tr>
-          <td>郵便番号</td>
-          <td><%= f.text_field :post %></td>
-        </tr>
-        <tr>
-          <td>住所</td>
-          <td><%= f.text_field :address %></td>
-        </tr>
-          <td>電話番号</td>
-          <td><%= f.text_field :tel %></td>
-        </tr>
-        <tr>
-          <td>email</td>
-          <td><%= f.email_field :email %></td>
-        </tr>
-        <tr>
-          <td>会員ステータス</td>
-          <td>
-            <%= f.radio_button(:is_enable, true) %>有効
-            <%= f.radio_button(:is_enable, false) %>退会
-          </td>
-        </tr>
-        <tr>
-          <td><%= f.submit '変更を保存' %></td>
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
+<div class="row">
+    <div class="col-6 mx-auto">
+      <table class="table table-hover">
+        <thead class = "thead-light">
+        <h2><%= @customer.surname %><%= @customer.name %>様の会員情報編集</h2>
+            <%= form_with model: @customer, url: admin_customer_path, method: :patch, local:true do |f| %>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">氏名</td>
+            <td><%= f.text_field :surname %><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">フリガナ</td>
+            <td><%= f.text_field :surname_kana %><%= f.text_field :name_kana %></td>
+          </tr>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">郵便番号</td>
+            <td><%= f.text_field :post %></td>
+          </tr>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">住所</td>
+            <td><%= f.text_field :address %></td>
+          </tr>
+            <td class="p-3 mb-2 bg-secondary text-white">電話番号</td>
+            <td><%= f.text_field :tel %></td>
+          </tr>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">email</td>
+            <td><%= f.email_field :email %></td>
+          </tr>
+          <tr>
+            <td class="p-3 mb-2 bg-secondary text-white">会員ステータス</td>
+            <td>
+              <%= f.radio_button(:is_enable, true) %>有効
+              <%= f.radio_button(:is_enable, false) %>退会
+            </td>
+          </tr>
+          <tr>
+            <td><%= f.submit '変更を保存' %></td>
+          </tr>
+        </tbody>
+      </table>
+        <% end %>
+  </div>
+</div>
 
