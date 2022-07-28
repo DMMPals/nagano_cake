@@ -39,6 +39,7 @@ class Public::OrdersController < ApplicationController
     order.save
     current_customer.cart_items.each do |cart_item|
       order_detail = order.order_details.new
+      order_detail.order_id = order.id
       order_detail.item_id = cart_item.item_id
       order_detail.quantity = cart_item.quantity
       order_detail.sale_price = cart_item.item.add_tax_price
@@ -50,7 +51,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    
+
   end
 
   def show
