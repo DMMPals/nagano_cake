@@ -50,12 +50,13 @@ class Public::OrdersController < ApplicationController
 
   end
 
-
-  def index 
-
+  def index
+    @orders = current_customer.orders.includes(:order_details, :items)
   end
 
   def show
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details
   end
 
 
